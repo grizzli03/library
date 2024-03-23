@@ -21,6 +21,11 @@ public class    BookApiController {
          bookService.create(bookDTO);
     }
 
+    @GetMapping("/getById/{bookId}")
+    public BookDTO getById(@PathVariable Long bookId){
+        return bookService.getById(bookId);
+    }
+
 
 
 

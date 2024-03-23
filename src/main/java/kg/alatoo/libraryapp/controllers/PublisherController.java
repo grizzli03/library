@@ -4,10 +4,7 @@ import kg.alatoo.libraryapp.dto.PublisherRequest;
 import kg.alatoo.libraryapp.services.PublisherService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/publisher")
@@ -18,5 +15,9 @@ public class PublisherController {
     @PostMapping("/add")
     public void addPublisher(@Validated @RequestBody PublisherRequest request){
         service.add(request);
+    }
+    @PostMapping("/delete")
+    public void delete(@RequestParam String email){
+        service.delete(email);
     }
 }

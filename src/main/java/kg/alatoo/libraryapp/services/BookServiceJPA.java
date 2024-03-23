@@ -49,6 +49,13 @@ public class BookServiceJPA implements BookService {
         bookRepository.save(book);
     }
 
+    @Override
+    public BookDTO getById(Long bookId) {
+        if (bookRepository.findById(bookId).isPresent())
+            return bookMapper.bookToBookDto(bookRepository.findById(bookId).get());
+        return null;
+    }
+
     private Publisher getPublisher(String publisherName) {
         Optional<Publisher> publisherOptional = publisherRepository.findByName(publisherName);
         if (publisherOptional.isEmpty()) {

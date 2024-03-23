@@ -8,4 +8,6 @@ public interface BookService {
    // Optional<BookDTO> getBookById(Long id);
 
     void create(BookDTO bookDTO);
+
+    BookDTO getById(Long bookId);
 }

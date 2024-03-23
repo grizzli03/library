@@ -18,4 +18,9 @@ public class PublisherServiceJpa implements PublisherService{
         publisher.setEmail(request.getEmail());
         publisherRepository.save(publisher);
     }
+
+    @Override
+    public void delete(String email) {
+        publisherRepository.deleteByEmail(email);
+    }
 }
