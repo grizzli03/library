@@ -21,22 +21,7 @@ public class    BookApiController {
          bookService.create(bookDTO);
     }
 
-//    @GetMapping("/api/v1/book/{id}")
-//    public BookDTO getBook(@PathVariable Long id) {
-//
-//        /*BookDTO dto = bookService.getBookById(id).orElse(null);
-//        if (dto != null) {
-//            return dto;
-//        } else {
-//            throw new NoSuchElementException();
-//        }*/
-//
-//        return bookService
-//                .getBookById(id)
-////                .orElseThrow(NoSuchElementException::new);
-////                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
-//                .orElseThrow(NotFoundException::new);
-//    }
+
 
 
 
