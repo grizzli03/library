@@ -1,13 +1,14 @@
 package kg.alatoo.libraryapp.services;
 
-import kg.alatoo.libraryapp.dto.BookDTO;
+import kg.alatoo.libraryapp.dto.BookRequest;
+import kg.alatoo.libraryapp.dto.BookResponse;
 
-import java.util.Optional;
+import java.util.List;
 
 public interface BookService {
-   // Optional<BookDTO> getBookById(Long id);
+    void create(BookRequest request);
 
-    void create(BookDTO bookDTO);
+    BookResponse getById(Long bookId);
 
-    BookDTO getById(Long bookId);
+    List<BookResponse> getAll();
 }

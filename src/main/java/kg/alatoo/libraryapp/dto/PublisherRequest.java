@@ -1,19 +1,15 @@
 package kg.alatoo.libraryapp.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import jakarta.persistence.OneToMany;
+import kg.alatoo.libraryapp.entities.Book;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Set;
 
-@Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
+@Getter
+@Setter
 public class PublisherRequest {
-
     private String name;
     private String email;
-
 }

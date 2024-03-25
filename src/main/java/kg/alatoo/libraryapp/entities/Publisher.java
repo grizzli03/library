@@ -1,9 +1,6 @@
 package kg.alatoo.libraryapp.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.Set;
@@ -17,9 +14,8 @@ import java.util.Set;
 public class Publisher {
 
     @Id
-    @GeneratedValue
-    @EqualsAndHashCode.Include
-    private long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String name;
     private String email;
 

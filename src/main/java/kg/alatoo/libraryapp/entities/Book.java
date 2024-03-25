@@ -35,8 +35,6 @@ public class Book {
 
     @Column(length = 50)
     private String isbn;
-    @Builder.Default
-    private int edition = 1;
 
     @ManyToOne
     private Publisher publisher;

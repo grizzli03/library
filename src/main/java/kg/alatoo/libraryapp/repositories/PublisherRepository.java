@@ -9,5 +9,7 @@ import java.util.Optional;
 @Repository
 public interface PublisherRepository extends JpaRepository<Publisher, Long> {
     Optional<Publisher> findByName(String name);
+    Optional<Publisher> findByEmail(String email);
+
     void deleteByEmail(String email);
 }
