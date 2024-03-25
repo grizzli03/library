@@ -4,17 +4,21 @@ import kg.alatoo.libraryapp.dto.PublisherRequest;
 import kg.alatoo.libraryapp.entities.Publisher;
 import kg.alatoo.libraryapp.exception.BadRequestException;
 import kg.alatoo.libraryapp.exception.NotFoundException;
+import kg.alatoo.libraryapp.repositories.BookRepository;
 import kg.alatoo.libraryapp.repositories.PublisherRepository;
 import kg.alatoo.libraryapp.services.PublisherService;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class PublisherServiceImpl implements PublisherService {
     private final PublisherRepository publisherRepository;
+    private final BookRepository bookRepository;
 
-    public PublisherServiceImpl(PublisherRepository publisherRepository) {
+    public PublisherServiceImpl(PublisherRepository publisherRepository, BookRepository bookRepository) {
         this.publisherRepository = publisherRepository;
+        this.bookRepository = bookRepository;
     }
 
     @Override
@@ -31,7 +35,9 @@ public class PublisherServiceImpl implements PublisherService {
     }
 
     @Override
+    @Transactional
     public void delete(String email) {
+        bookRepository.deleteAllByPublisherEmail(email);
         publisherRepository.deleteByEmail(email);
     }
 }
