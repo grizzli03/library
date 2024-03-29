@@ -13,4 +13,4 @@ This application is for online library.
 Before starting, it is required to install docker to your machine.
 First of all you have to install application in maven settings and then run
 1. `docker build -t libraryapi .`
-2. `docker run -p 8000:8080 libraryapi`
+2. `docker run -p 8000:8777 libraryapi`
